@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <title>和利时实验室设备管理系统</title>
+     <meta name="description" content="和利时实验室设备管理系统"/>
+     <meta name="keywords" content="和利时实验室设备管理系统"/>
+     <meta http-equiv="Expires"  CONTENT="0">     
+     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">  
+     <meta http-equiv="Pragma" CONTENT="no-cache">      
+     <base target="_self"/>
+     <link rel="Shortcut Icon" href="images/icon.png">
+     <link rel="stylesheet" type="text/css" href="style/error.css">
+  </head>
+  <script type="text/javascript" src="easyui/jquery.min.js"></script>
+  <script language="javascript">
+    $(function(){
+     $('.error').css({'position':'absolute','left':($(window).width()-490)/2});
+     $(window).resize(function(){  
+     $('.error').css({'position':'absolute','left':($(window).width()-490)/2});
+     });  
+    });  
+</script> 
+</head>
+<body style="background:#edf6fa;">
+    <div class="error">   
+     <div class="reindex"><p>看到这个提示，就快点重新想想用户名和密码是什么吧!</p><a href="index.html" target="_parent">重新登录</a></div>
+    </div>
+</body>
+</html>

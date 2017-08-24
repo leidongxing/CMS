@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="Expires"content="0">     
+     <meta http-equiv="Cache-Control"content="no-cache, must-revalidate">  
+     <meta http-equiv="Pragma"content="no-cache">      
+     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css"/>
+     <script type="text/javascript" src="easyui/jquery.min.js"></script>
+     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+     <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" ></script>
+     <script type="text/javascript" src="script/user.js"></script>
+  </head>
+  <body>
+   <div style="width:700px;height:auto;margin:0 auto;padding:0;">
+	<table id="user_table"></table>
+   </div>	
+<!-- 	<div id="user_toolbar"style="font-size:14px;font-family:Microsoft YaHei;">
+	     <span style="margin:20px"><a href="#"class="easyui-linkbutton remove" iconCls="icon-remove">删除该用户</a></span>
+	     <span style="margin:20px"><a href="#"class="easyui-linkbutton edit" iconCls="icon-edit">保存本次修改</a></span>
+	</div> -->
+    <form id="user_form">
+       <p style="margin:10px">
+          操作权限:<input class="easyui-validatebox textbox"name="password"id="pwd"type="password"placeholder="******"data-options="required:true"validType="lengthTo[5,10]"style="margin-left:10px"/> 
+       </p>
+       <p style="margin:10px">
+          :&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox textbox"type="password"placeholder="******"data-options="required:true"validType="equalTo['pwd']"style="margin-left:10px"/>
+       </p>
+    </form> 
+  </body>	
+ </html>
+ 

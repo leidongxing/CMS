@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <title>和利时实验室设备管理系统</title>
+     <meta name="description" content="和利时实验室设备管理系统"/>
+     <meta name="keywords" content="和利时实验室设备管理系统"/>
+     <meta http-equiv="Expires"content="0">     
+     <meta http-equiv="Cache-Control"content="no-cache, must-revalidate">  
+     <meta http-equiv="Pragma"content="no-cache">      
+     <base target="_self"/>
+     <link rel="Shortcut Icon"href="images/icon.png">
+     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+     <link rel="stylesheet" type="text/css" href="style/style.css" />
+     <script type="text/javascript" src="easyui/jquery.min.js"></script>
+     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+     <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" ></script>
+     <script type="text/javascript" src="script/main.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="headerleft">
+       <img src="images/logo.png" title="系统首页"/>
+       <ul class="nav">
+        <li id="lib1"><img src="images/icon01.png"/><span>郑西实验室</span></li>
+        <li id="lib2"><img src="images/icon02.png"/><span>广深港实验室</span></li>
+        <li id="lib3"><img src="images/icon03.png"/><span>CBTC实验室</span></li>
+        <li id="lib4"><img src="images/icon04.png"/><span>列控实验室</span></li>
+        <li id="lib4"><img src="images/icon05.png"/><span>平台实验室</span></li>
+        <li id="lib5"><img src="images/icon06.png"/><span>综合监控实验室</span></li>
+        <li id="lib6"><img src="images/icon07.png"/><span>DMI实验室</span></li>
+        <li id="search"><img src="images/icon08.png"/><span>设备记录查询</span></li>
+      </ul> 
+      </div>           
+      <div class="headerright"> 
+         <ul>
+          <li><a href="javascript:exitSystem()">退出系统</a></li>
+        </ul> 
+        <div class="user">
+          <span><%=session.getAttribute("username")%></span>
+        </div>   
+      </div>
+  </div> 
+   <div class="easyui" data-options="region:'center',border:'false'" style="height:600px;">
+    <div id="tabs">
+       <div title="起始页" iconCls="icon-house" style="height:600px;padding:10px auto">
+         <ul class="welinfo">
+              <li style="background:url(images/sun.png) no-repeat">
+                 <b> 用户你好，欢迎使用本系统！</b>
+                 (用户类型为)
+              </li>  
+              <li style="background:url(images/time.png) no-repeat">
+                 <i>您上次登录的时间为：</i>
+                 <a href="javascript:updatePassword()">修改密码</a>
+              </li>        
+           </ul>
+           <div class="xline"></div> 
+           <ul class="iconlist"> 
+            <li><img src="images/devicon.png" /><p><a href="javascript:manageDev()">设备管理</a></p></li>
+           </ul>
+           <form id="update_form">
+             <p style="margin:10px">
+               输入新密码:<input class="easyui-validatebox textbox"name="password"id="pwd"type="password"placeholder="******"data-options="required:true"validType="lengthTo[5,10]"style="margin-left:10px"/> 
+             </p>
+             <p style="margin:10px">
+               确认输入:&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox textbox"type="password"placeholder="******"data-options="required:true"validType="equalTo['pwd']"style="margin-left:10px"/>
+             </p>
+          </form> 
+     </div>  
+   </div>  
+ </div>
+ </body> 
+</html>  

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="Expires"   CONTENT="0">     
+     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">  
+     <meta http-equiv="Pragma" CONTENT="no-cache">      
+     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+     <script type="text/javascript" src="easyui/jquery.min.js"></script>
+     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+     <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" ></script>	
+     <script type="text/javascript" src="script/admin_dev.js"></script>   
+  </head>
+  <body>
+    <div style="width:1250px;height:auto;margin:0 auto;padding:0;">
+	  <table id="dev_table"></table>
+	</div> 
+	<div id="dev_toolbar"style="font-size:14px;font-family:Microsoft YaHei;">
+	   <p style="margin:10px;">
+	     <a href="#"class="easyui-linkbutton"id="add"iconCls="icon-add">添加一级设备</a>
+	     <a href="#"class="easyui-linkbutton"id="remove"iconCls="icon-remove">删除该一级设备</a>
+	     <a href="#"class="easyui-linkbutton"id="save"iconCls="icon-edit">保存修改并提交</a>
+	   </p>  
+	</div>
+	<form id="dev_form"style="margin:0;padding:5px 0 0 25px;">   
+	   <p>一级设备名称:<input class="easyui-validatebox textbox"name="dev_name"style="width:150px;margin:10px 10px 10px 35px;"data-options="required:true"/></p>
+	   <p>一级设备归属实验室:<input class="easyui-combobox"name="dev_home"style="width:150px;margin:10px;"data-options="required:true,textField:'dev_home',valueField:'dev_home',panelHeight:'50',
+                data:[{dev_home:'郑西实验室'},{dev_home:'广深港实验室'},{dev_home:'CBTC实验室'},
+                      {dev_home:'列控实验室'},{dev_home:'平台实验室'},{dev_home:'综合监控实验室'},
+                      {dev_home:'DMI实验室'}]"/>
+     </p>
+      <div id="mm_root"class="easyui-menu" style="width:120px;">
+        <div id="editRoot"data-options="iconCls:'icon-add'">修改本设备</div>
+        <div id="rootAddSub"data-options="iconCls:'icon-add'">添加二级设备</div>
+        <div id="rootAddLeaf"data-options="iconCls:'icon-add'">添加三级设备</div>
+        <div id="removeRoot"data-options="iconCls:'icon-remove'">删除本设备</div>
+        <div id="endRoot"data-options="iconCls:'icon-cancel'">取消编辑</div>
+      </div>
+      <div id="mm_sub"class="easyui-menu" style="width:120px;">
+        <div id="editSub"data-options="iconCls:'icon-add'">修改本设备</div>
+        <div id="subAddLeaf"data-options="iconCls:'icon-add'">添加三级设备</div>
+        <div id="removeSub"data-options="iconCls:'icon-remove'">删除本设备</div>
+        <div id="endSub"data-options="iconCls:'icon-cancel'">取消编辑</div>
+      </div>
+      <div id="mm_leaf"class="easyui-menu" style="width:120px;">
+         <div id="editLeaf"data-options="iconCls:'icon-add'">修改本设备</div>
+         <div id="removeLeaf"data-options="iconCls:'icon-remove'">删除本设备</div>
+         <div id="endLeaf"data-options="iconCls:'icon-cancel'">取消编辑</div>
+      </div>
+	</form> 
+  </body>
+</html>	 
+	 

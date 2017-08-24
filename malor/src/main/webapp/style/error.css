@@ -1,0 +1,19 @@
+body,ul,li,div,p
+{
+  margin:0;
+  padding:0;
+}
+ul li
+{
+  list-style:none;
+}
+a
+{
+  text-decoration:none;
+}
+/*登录出错*/
+.error{background:url(../images/error.png) top center no-repeat; width:490px; margin-top:75px;padding-top:65px;font-family:"Hiragino Sans GB","Century Gothic",system, Arial, Verdana, Tahoma,"微软雅黑";}
+.error h2{font-size:20px; padding-left:154px;}
+.error p{line-height:35px;color:#717678;text-align:center;}
+.reindex{margin:50px 0 0 0;}
+.reindex a{display:block;width:115px; height:35px;margin:10px auto;font-size:14px; font-weight:bold; color:#fff; background:#3c95c8;  line-height:35px; text-align:center;border-radius: 3px;}

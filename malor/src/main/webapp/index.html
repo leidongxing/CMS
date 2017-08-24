@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>和利时实验室设备管理系统</title>
+<link rel="Shortcut Icon"href="images/reborn.png">
+<link href="style/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="script/cloud.js"></script>
+<script type="text/javascript"src="script/index.js"></script>
+</head>
+<body style="background-color:#1c77ac; background-image:url(images/light.png); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
+    <div id="mainBody">
+      <div id="cloud1" class="cloud"></div>
+      <div id="cloud2" class="cloud"></div>
+    </div>  
+
+    <div class="logintop">    
+        <span>欢迎登录和利时实验室设备管理系统</span>     
+    </div> 
+    <div class="loginbody">    
+        <span class="systemlogo"></span>  
+        <div class="loginbox"id="login">
+            <form onsubmit="return form_validate('#login')"method="post"action="indexServlet">
+            <ul>
+            <li><input name="username"type="text"class="loginuser"placeholder="用户名"/><p></p></li>
+            <li><input name="password"type="password"class="loginpwd"placeholder="密码"/><p></p></li>
+            <li><input type="submit"name="option"class="loginbtn" value="登录"/>
+            <label><a href="javascript:change();">没有账号？立即注册</a></label></li>
+            </ul>
+            </form> 
+        </div>
+
+        <div class="loginbox"id="register"style="display:none;background-image:url(images/registerinfo.png)">
+            <form onsubmit="return form_validate('#register')"method="post"action="indexServlet">
+            <ul>
+            <li><input name="username"type="text"class="loginuser"placeholder="注册用户名"/><p></p></li>
+            <li><input name="password"type="password"class="loginpwd"placeholder="密码"/><p></p></li>
+            <li><input type="submit"name="option"class="loginbtn"value="注册并登录"onclick=/>
+            <label><a href="javascript:change();">已有账号？立即登录</a></label></li>
+            </ul>
+            </form> 
+        </div> 
+    </div>
+    <div class="loginbm">copyright 和利时集团 1993-2017 All Rights Reserved </div>
+</body> 
+</html>

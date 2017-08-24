@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hollysys.malor.dao.UserDao">
+    <select id="queryByUserNameAndPassWord" resultType="java.util.HashMap">
+       SELECT 
+           username,
+           name,
+           lab,
+           user_type,
+           active_state,
+           last_time
+       FROM
+           user
+       WHERE
+           username=#{username} 
+       AND 
+           password=#{password}             
+    </select>
+	<select id="queryByUserName" resultType="User" parameterType="String">
+		SELECT
+			username,
+			password,
+			name,
+			lab,
+			user_type,
+			active_state,
+			last_time
+		FROM
+			user
+		WHERE
+			username = #{username}
+	</select>
+	
+	<select id="queryAll" resultType="User">
+		SELECT
+			username,
+			name,
+			lab,
+			user_type
+		FROM
+			user
+		ORDER BY
+			username
+		LIMIT #{offset}, #{limit}
+	</select>
+	
+	<update id ="updatePassword">
+	   UPDATE 
+	        user
+       SET
+            password= #{password}
+       WHERE
+            username= #{username}
+	</update>
+</mapper>
