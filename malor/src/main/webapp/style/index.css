@@ -13,7 +13,7 @@ span{display:block;}
 .logintop{font-size:13px;height:47px; position:absolute; top:0; background:url(../images/loginbg1.png) repeat-x;z-index:100; width:100%;}
 .logintop span{color:#fff; line-height:47px; background:url(../images/loginsj.png) no-repeat 21px 18px; text-indent:44px; color:#afc5d2; float:left;}
 .loginbody{background:url(../images/loginbg3.png) no-repeat center center; width:100%; height:585px; overflow:hidden; position:absolute; top:47px;}
-.systemlogo{background:url(../images/logo.png) no-repeat center;width:100%; height:71px; margin-top:75px;}
+.systemlogo{background:url(../images/logo.png) no-repeat center;width:100%; height:71px; margin-top:25px;}
 .loginbox{width:692px; height:336px; background:url(../images/logininfo.png) no-repeat; margin-top:30px;}
 .loginbox ul{margin-top:88px; margin-left:285px;}
 .loginbox ul li{margin-bottom:10px;}
