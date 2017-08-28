@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.hollysys.malor.dao.UserDao;
 import com.hollysys.malor.entity.User;
@@ -19,5 +20,6 @@ public class UserTest extends BaseTest {
 		User user = userDao.queryByUserName(username);
 		HashMap<?,?> userMap = userDao.queryByUserNameAndPassWord("admin", "admin");
 		System.out.println(userMap.get("last_time"));
+	
 	}
 }
