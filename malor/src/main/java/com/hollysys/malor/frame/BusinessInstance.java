@@ -9,8 +9,7 @@ public class BusinessInstance implements ApplicationContextAware {
 
 	private BusinessFactory businessFactory = null;
 
-	public void setApplicationContext(ApplicationContext applicationContext)
-			throws BeansException {
+	public void setApplicationContext(ApplicationContext applicationContext)throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
@@ -21,7 +20,6 @@ public class BusinessInstance implements ApplicationContextAware {
 	public GenericResult callBusiness(String code, Map requestParams,Map commParams, int businessType,Map<Thread, DataExchangeAssembly> dataExchanges) {
 		Thread current = Thread.currentThread();
 		DataExchangeAssembly dataExchange = (DataExchangeAssembly) dataExchanges.get(current);
-
 		return callBusiness(code, requestParams, commParams, businessType,dataExchange);
 	}
 
