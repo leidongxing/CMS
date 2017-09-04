@@ -6,8 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Chapter4Main {
 	 public static void main(String[]args){
 		 ApplicationContext context = new AnnotationConfigApplicationContext(ConcertConfig.class);
-		 Audience a=(Audience)context.getBean("audience");  
-		
+		 Performance p =(Performance) context.getBean("p");  
+		 p.perform();
 		 
 	 }
 }
