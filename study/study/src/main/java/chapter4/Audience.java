@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
 @Aspect
 public class Audience {
@@ -41,6 +42,7 @@ public class Audience {
 		try {
 			System.out.println("do it");
 			p.proceed();
+		    System.out.println("do it after");
 		} catch (Throwable e) {
 			System.out.println("thorw except");
 		}
