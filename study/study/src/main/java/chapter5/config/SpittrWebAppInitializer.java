@@ -1,4 +1,4 @@
-package chapter5;
+package chapter5.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

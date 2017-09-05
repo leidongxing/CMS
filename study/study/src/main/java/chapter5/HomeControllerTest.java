@@ -4,10 +4,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
+
+import chapter5.web.HomeController;
 
 public class HomeControllerTest {
    @Test
@@ -15,10 +17,5 @@ public class HomeControllerTest {
 	   HomeController controller = new HomeController();
 	   MockMvc mockMvc= standaloneSetup(controller).build();
 	   mockMvc.perform(get("/")).andExpect(view().name("home"));  
-	   
-	   Spittle s1= new Spittle("1",new Date(10000L));
-	   Spittle s2= new Spittle("2",new Date(10000L));
-	   System.out.println(s1.equals(s2));
-	   
    }
 }
