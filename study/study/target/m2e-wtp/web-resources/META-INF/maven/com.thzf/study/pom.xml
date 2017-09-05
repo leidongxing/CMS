@@ -7,6 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>good good study</name>
   <url>http://maven.apache.org</url>
+  <properties>
+     <spring.version>4.1.7.RELEASE</spring.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -74,55 +77,55 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>4.1.7.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 		<!-- 2)Spring DAO层 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- 3)Spring web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- 4)Spring test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- redis客户端:Jedis -->
 		<dependency>
