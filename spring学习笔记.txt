@@ -104,4 +104,14 @@ Spring中使用AspectJ注解
 @AfterReturning
 @AfterThrowing
 
+第4章 面向切面的spring
 
+
+HTTP协议的无状态性决定了   状态管理，工作流，验证问题的复杂性
+Spring MVC构建在Spring理念之上的Web框架  基于模型视图控制器MVC
+调度Servlet  处理器映射  控制器与视图解析
+ 
+Spring MVC  DispatcherServlet 前端控制器
+
+@Controller 声明为一个控制器  spring应用会加载为一个bean
+@RequestMapping  处理适配
