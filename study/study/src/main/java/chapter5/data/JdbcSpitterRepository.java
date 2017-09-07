@@ -22,13 +22,13 @@ public class JdbcSpitterRepository implements SpitterRepository{
 	
 	public Spitter save(Spitter spitter) {
 		jdbc.update(
-		"insert into Spitter(username,password,first_name,last_name,email)values(?,?,?,?,?)",spitter.getUsername(),spitter.getPassword(),spitter.getFirstName(),spitter.getLastName(),spitter.getEmail());	
+		"insert into spitter(username,password,first_name,last_name,email)values(?,?,?,?,?)",spitter.getUsername(),spitter.getPassword(),spitter.getFirstName(),spitter.getLastName(),spitter.getEmail());	
 		return spitter;
 	}
 
 	public Spitter findByUsername(String username) {
 		return jdbc.queryForObject(
-		"select id,username,null,first_name,last_name,email from Spitter where username=?",
+		"select id,username,null,first_name,last_name,email from spitter where username=?",
 		new SpitterRowMapper(),username);
 	}
 	
