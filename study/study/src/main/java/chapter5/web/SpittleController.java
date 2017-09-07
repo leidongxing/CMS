@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import chapter5.data.SpittleRepository;
 
 @Controller
-@RequestMapping("/spittles")
+@RequestMapping(value="/spittles")
 public class SpittleController {
      private SpittleRepository spittleRepository;
      
@@ -18,7 +18,7 @@ public class SpittleController {
     	 this.spittleRepository = spittleRepository;
      }
      
-     @RequestMapping(method=RequestMethod.GET)
+     @RequestMapping(method={GET,POST})
      public String spittle(Model model){
 //    	 model.addAttribute( spittleRepository.findSpittles(Long.MAX_VALUE, 20));
     	 model.addAttribute("spittleList",spittleRepository.findSpittles(Long.MAX_VALUE, 20)); 

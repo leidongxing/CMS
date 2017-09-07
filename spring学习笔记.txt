@@ -60,7 +60,7 @@ Spring Expression Language（SpEL）
 @Primary 避免自动装配Bean的歧义性  首选
 @Qualifier注解  限定bean 
 @PropertySource注解  声明properties 源
-@Value 注解  @Value("${disc.title}") String title,
+@Value 注解  @Value("${disc.title}")  String title,
 
 
 
@@ -115,3 +115,10 @@ Spring MVC  DispatcherServlet 前端控制器
 
 @Controller 声明为一个控制器  spring应用会加载为一个bean
 @RequestMapping  处理适配
+@Repository 声明为一个可增删改查的类似于Dao的仓库   spring应用会加载为一个bean
+
+
+重写hashCode()和equals()方法可借助org.apache.commons.lang3.builder  EqualsBuilder和HashCodeBuilder
+利用validation.api.jar对 bean属性进行验证  @NotNull  @Email  @size(min=5,max=16)
+
+@Import@PropertySource
