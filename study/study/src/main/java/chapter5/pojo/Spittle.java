@@ -1,4 +1,4 @@
-package chapter5;
+package chapter5.pojo;
 
 import java.util.Date;
 

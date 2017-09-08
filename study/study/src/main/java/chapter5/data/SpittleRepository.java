@@ -1,8 +1,7 @@
 package chapter5.data;
 
 import java.util.List;
-
-import chapter5.Spittle;
+import chapter5.pojo.Spittle;
 
 public interface SpittleRepository {
 	List<Spittle> findRecentSpittles();

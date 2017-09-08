@@ -9,7 +9,8 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import chapter5.Spittle;
+import chapter5.pojo.Spitter;
+import chapter5.pojo.Spittle;
 
 @Repository
 public class JdbcSpittleRepository implements SpittleRepository{
