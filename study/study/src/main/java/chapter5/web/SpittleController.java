@@ -21,7 +21,7 @@ public class SpittleController {
      @RequestMapping(method={GET,POST})
      public String spittle(Model model){
 //    	 model.addAttribute( spittleRepository.findSpittles(Long.MAX_VALUE, 20));
-    	 model.addAttribute("spittleList",spittleRepository.findSpittles(Long.MAX_VALUE, 20)); 
+    	 model.addAttribute("spittleList",spittleRepository.findSpittles(Long.MAX_VALUE, 20));
     	 return "spittles";
      }
 }

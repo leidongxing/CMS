@@ -1,6 +1,6 @@
 package chapter5.data;
 
-import chapter5.Spitter;
+import chapter5.pojo.Spitter;
 
 public interface SpitterRepository {
    Spitter save(Spitter spitter);
