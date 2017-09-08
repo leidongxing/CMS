@@ -26,10 +26,25 @@ public class SpittleControllerTest {
 	   mockMvc.perform(get("/spittles")).andExpect(view().name("spittle")); 
 	}
 	
-	
-	
-	
+  @Test
+  public void shouldShowPagedSpittles() throws Exception {
+    List<Spittle> expectedSpittles = createSpittleList(50);
+    SpittleRepository mockRepository = mock(SpittleRepository.class);
+    when(mockRepository.findSpittles(238900, 50))
+        .thenReturn(expectedSpittles);
+    
+    SpittleController controller = new SpittleController(mockRepository);
+    MockMvc mockMvc = standaloneSetup(controller)
+        .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
+        .build();
 
+    mockMvc.perform(get("/spittles?max=238900&count=50"))
+      .andExpect(view().name("spittles"))
+      .andExpect(model().attributeExists("spittleList"))
+      .andExpect(model().attribute("spittleList", 
+                 hasItems(expectedSpittles.toArray())));
+  }
+	
 //  @Test
 //  public void houldShowRecentSpittles() throws Exception {
 //    List<Spittle> expectedSpittles = createSpittleList(20);
@@ -49,24 +64,7 @@ public class SpittleControllerTest {
 //                  hasItems(expectedSpittles.toArray())));
 //  }
 //
-//  @Test
-//  public void shouldShowPagedSpittles() throws Exception {
-//    List<Spittle> expectedSpittles = createSpittleList(50);
-//    SpittleRepository mockRepository = mock(SpittleRepository.class);
-//    when(mockRepository.findSpittles(238900, 50))
-//        .thenReturn(expectedSpittles);
-//    
-//    SpittleController controller = new SpittleController(mockRepository);
-//    MockMvc mockMvc = standaloneSetup(controller)
-//        .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
-//        .build();
-//
-//    mockMvc.perform(get("/spittles?max=238900&count=50"))
-//      .andExpect(view().name("spittles"))
-//      .andExpect(model().attributeExists("spittleList"))
-//      .andExpect(model().attribute("spittleList", 
-//                 hasItems(expectedSpittles.toArray())));
-//  }
+
 //  
 //  @Test
 //  public void testSpittle() throws Exception {
@@ -99,11 +97,11 @@ public class SpittleControllerTest {
 //    verify(mockRepository, atLeastOnce()).save(new Spittle(null, "Hello World", new Date(), -81.5811668, 28.4159649));
 //  }
 //  
-//  private List<Spittle> createSpittleList(int count) {
-//    List<Spittle> spittles = new ArrayList<Spittle>();
-//    for (int i=0; i < count; i++) {
-//      spittles.add(new Spittle("Spittle " + i, new Date()));
-//    }
-//    return spittles;
-//  }
+  private List<Spittle> createSpittleList(int count) {
+    List<Spittle> spittles = new ArrayList<Spittle>();
+    for (int i=111; i < count; i++) {
+      spittles.add(new Spittle("Spittle " + i, new Date()));
+    }
+    return spittles;
+  }
 }
