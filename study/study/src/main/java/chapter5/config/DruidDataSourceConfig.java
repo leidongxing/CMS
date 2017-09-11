@@ -39,6 +39,7 @@ public class DruidDataSourceConfig {
 		datasource.setUsername(username);
 		datasource.setPassword(password);
 		datasource.setDriverClassName(driverClassName);
+		System.out.println("-----------druid data source init!!-----------");
     	return datasource;
     }
     

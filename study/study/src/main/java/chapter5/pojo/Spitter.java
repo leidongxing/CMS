@@ -1,11 +1,12 @@
 package chapter5.pojo;
 
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class Spitter {
 	private Long id;
@@ -25,10 +26,15 @@ public class Spitter {
 	@Size(min = 2, max = 30)
 	private String lastName;
 	
-	@Email
+ 
 	@NotNull
+//	@Email
 	private String email;
-
+	
+	public Spitter(){
+		
+	}
+    
 	public Spitter(String username, String password, String firstName,
 			String lastName, String email) {
 		this(null, username, password, firstName, lastName, email);
