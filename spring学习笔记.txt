@@ -114,11 +114,20 @@ Spring MVC构建在Spring理念之上的Web框架  基于模型视图控制器MVC
 Spring MVC  DispatcherServlet 前端控制器
 
 @Controller 声明为一个控制器  spring应用会加载为一个bean
-@RequestMapping  处理适配
+@RequestMapping  处理适配   可组合起来形成多层相对路径
 @Repository 声明为一个可增删改查的类似于Dao的仓库   spring应用会加载为一个bean
 
 
 重写hashCode()和equals()方法可借助org.apache.commons.lang3.builder  EqualsBuilder和HashCodeBuilder
 利用validation.api.jar对 bean属性进行验证  @NotNull  @Email  @size(min=5,max=16)
 
-@Import@PropertySource
+@Import 导入其他类
+理想情况下，要识别的资源通过URL路径进行标识而不通过查询参数
+@RequestParam(value="",defaultValue="") 需要的请求参数
+@PathVariable() 用在参数上面  没有value属性 则默认占位符与该方法参数相同(@RequestMapping的path)   
+@RequestMapping(value="/{spittleId}",method=GET)  
+public String  showSpittle(
+  @RequestParam("spittleId")
+  @PathVariable long spittleId,
+  Model model)
+@Vaild注解放在参数的bean中 用于校验

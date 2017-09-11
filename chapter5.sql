@@ -31,14 +31,15 @@ DROP TABLE IF EXISTS `spitter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spitter` (
-  `id` int(12) DEFAULT NULL,
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(20) CHARACTER SET utf8 NOT NULL,
   `password` varchar(20) CHARACTER SET utf8 NOT NULL,
   `first_name` varchar(30) CHARACTER SET utf8 NOT NULL,
   `last_name` varchar(30) CHARACTER SET utf8 NOT NULL,
   `email` varchar(30) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +48,7 @@ CREATE TABLE `spitter` (
 
 LOCK TABLES `spitter` WRITE;
 /*!40000 ALTER TABLE `spitter` DISABLE KEYS */;
-INSERT INTO `spitter` VALUES (201,'ldx','123123','lei','slark','7514@qq.com');
+INSERT INTO `spitter` VALUES (1,'am','difashi','xu','zhilei','bsheng@gmail.com'),(2,'ldx','123123','lei','slark','7514@qq.com'),(3,'jackma','123','jack','ma','jack@alibaba.com');
 /*!40000 ALTER TABLE `spitter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,12 +60,13 @@ DROP TABLE IF EXISTS `spittle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spittle` (
-  `id` int(12) DEFAULT NULL,
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
   `message` varchar(140) CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `latitude` double DEFAULT NULL,
-  `longitude` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `longitude` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +75,7 @@ CREATE TABLE `spittle` (
 
 LOCK TABLES `spittle` WRITE;
 /*!40000 ALTER TABLE `spittle` DISABLE KEYS */;
-INSERT INTO `spittle` VALUES (1,'大大萨达大所爱的','2017-09-07 01:42:27',1.2,2.3);
+INSERT INTO `spittle` VALUES (1,'大大萨达大所爱的','2010-02-16 09:42:27',1.2,2.3),(2,'你好吗','2016-12-14 10:37:06',3.14,0.15926);
 /*!40000 ALTER TABLE `spittle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -86,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-07 19:14:02
+-- Dump completed on 2017-09-11 20:11:46
