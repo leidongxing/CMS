@@ -1,5 +1,7 @@
 package chapter5.config;
 
+import javax.servlet.Filter;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpittrWebAppInitializer extends
@@ -21,5 +23,10 @@ public class SpittrWebAppInitializer extends
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
 	}
-
+    
+	@Override
+	protected Filter[] getServletFilters(){
+		return null;
+		
+	}
 }
