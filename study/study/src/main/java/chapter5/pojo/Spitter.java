@@ -1,6 +1,7 @@
 package chapter5.pojo;
 
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,24 +11,24 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Spitter {
 	private Long id;
-	@NotNull
+	@NotNull(message="{username.size}")
 	@Size(min = 5, max = 16)
 	private String username;
 
-	@NotNull
+	@NotNull(message="{password.size}")
 	@Size(min = 2, max = 30)
 	private String password;
 	
-	@NotNull
+	@NotNull(message="{firstName.size}")
 	@Size(min = 2, max = 30)
 	private String firstName;
 	
-	@NotNull
+	@NotNull(message="{lastName.size}")
 	@Size(min = 2, max = 30)
 	private String lastName;
 	
- 
-	@NotNull
+    @Min(2)
+	@NotNull(message="{email.valid}")
 //	@Email
 	private String email;
 	
