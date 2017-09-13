@@ -154,3 +154,7 @@ return "redirect:/spitter/{username}" ×÷ÎªÕ¼Î»·ûÌî³äµ½urlÖĞ  usernameÔÚÖĞ²»°²È«×
 
 SpringÌá¹©flash attribute±£´æÔÚsessionÖĞ  Ê¹µÃ¶ÔÏóÔÚÖØ¶¨ÏòÖĞ´æ»î
 
+
+
+@EnableWebSecurity×¢½â  ÆôÓÃweb°²È«ĞÔ
+@EnableWebMvcSecurity×¢½â  SpringMVCÓ¦ÓÃÆô¶¯°²È«ĞÔ
