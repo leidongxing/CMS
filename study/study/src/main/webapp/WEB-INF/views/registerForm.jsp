@@ -8,12 +8,13 @@
 <title>register form!</title>
 </head>
 <body>
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     first name:<input type="text" name="firstName"/><br>
     last  name:<input type="text" name="lastName"/><br>
     username:<input type="text" name="username"/><br>
     password:<input type="password" name="password"/><br>
     email:<input type="text" name="email"/><br>
+    image:<input type="file" name="image" accept="image/jpeg,image/png,image/gif"/>
     <input type="submit" value="Register"/>
   </form>
 </body>
