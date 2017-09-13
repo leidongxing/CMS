@@ -1,6 +1,6 @@
 第4章 面向切面的spring
 第6章 渲染Web视图
-
+第8章 使用Spring Web Flow
 
 4中关键策略
 基于POJO的轻量级和最小侵入性编程；
@@ -145,3 +145,12 @@ VelocityViewResolver                 Velocity
 @RequestPart注解在控制器中用于接收二进制数据  byte[]数组 
 @ResponseStatus注解     将异常映射为HTTP状态码
 @ExceptionHandler注解  用在控制器里的方法上  可以处理该控制器中的所有方法的异常
+
+控制器通知 controller advice 将所有的ExceptionHandler场景收集在一个类之中 所有控制器的异常在一个地方进行一致的处理
+@ControllerAdvice注解 声明为控制器通知组件 spring应用会加载为一个bean
+
+return "redirect:/spitter/" + spitter.getUsername();  不安全
+return "redirect:/spitter/{username}" 作为占位符填充到url中  username在中不安全字符进行转义
+
+Spring提供flash attribute保存在session中  使得对象在重定向中存活
+

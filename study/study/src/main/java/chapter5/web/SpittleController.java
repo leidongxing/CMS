@@ -65,10 +65,4 @@ public class SpittleController {
 			 spittleRepository.save(spittle);
 			 return "redirect:/spittles";
      }
-     
-     @ExceptionHandler(Exception.class)
-     public String handleException(){
-    	 return "error/duplicate";
-     }
-     
 }
