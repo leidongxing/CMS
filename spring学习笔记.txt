@@ -158,3 +158,4 @@ Spring提供flash attribute保存在session中  使得对象在重定向中存活
 
 @EnableWebSecurity注解  启用web安全性
 @EnableWebMvcSecurity注解  SpringMVC应用启动安全性
+校验用户:数据库密码加密  输入密码加密后与数据库密码进行匹配
