@@ -1,6 +1,7 @@
 第4章 面向切面的spring
 第6章 渲染Web视图
 第8章 使用Spring Web Flow
+第9章 保护Web应用
 
 4中关键策略
 基于POJO的轻量级和最小侵入性编程；
@@ -159,3 +160,9 @@ Spring提供flash attribute保存在session中  使得对象在重定向中存活
 @EnableWebSecurity注解  启用web安全性
 @EnableWebMvcSecurity注解  SpringMVC应用启动安全性
 校验用户:数据库密码加密  输入密码加密后与数据库密码进行匹配
+
+cross-site request forgery(CSRF) 跨站请求伪造
+HTTP Basic Authentication   HTTP Basic认证
+
+数据访问对象（data access object）DAO  以持久化技术无关的方式来访问
+模块方法模式：模块方法将过程中与特定实现相关的部分委托给接口，而这个接口的不同实现定义了过程中的具体行为
