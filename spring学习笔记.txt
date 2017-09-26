@@ -175,3 +175,9 @@ ORM object relational mapping 框架
 Lazy Loading    延迟加载  在需要的时候获取数据
 Eager fetching  预先抓取  节省多次查询的成本
 Cacading  级联   
+
+mongodb 文档数据库   对象不会单独存在 作为文档的嵌入元素之九华
+Spring data  mongodb注解
+@id注解  为id
+@document注解用在类上  标明映射到Mongodb中
+@Field注解表明为元数据
