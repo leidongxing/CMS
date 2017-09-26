@@ -2,6 +2,7 @@
 第6章 渲染Web视图
 第8章 使用Spring Web Flow
 第9章 保护Web应用
+第11章   使用对象-关系映射持久化数据
 
 4中关键策略
 基于POJO的轻量级和最小侵入性编程；
@@ -60,12 +61,15 @@ Spring Expression Language（SpEL）
 @Named注解来为bean设置ID  Java依赖注入规范（Java Dependency Injection）
 @Inject注解 来源于Java依赖注入规范
 @Profile注解应用在了类级别上   条件化创建bean方面
-@ActiveProfiles激活特定的Profile
+@ActiveProfiles激活特定的Profile    只在junit集成测试类中有效
 @Conditional注解定义条件化的bean
 @Primary 避免自动装配Bean的歧义性  首选
 @Qualifier注解  限定bean 
 @PropertySource注解  声明properties 源
 @Value 注解  @Value("${disc.title}")  String title,
+@ContextConfiguration  加载配置
+@RunWith(SpringJUnit4ClassRunner.class)开启spring junit测试
+@Test junit测试方法
 
 
 
@@ -167,6 +171,14 @@ HTTP Basic Authentication   HTTP Basic认证
 数据访问对象（data access object）DAO  以持久化技术无关的方式来访问
 模块方法模式：模块方法将过程中与特定实现相关的部分委托给接口，而这个接口的不同实现定义了过程中的具体行为
 
+ORM object relational mapping 框架
+Lazy Loading    延迟加载  在需要的时候获取数据
+Eager fetching  预先抓取  节省多次查询的成本
+Cacading  级联   
 
+mongodb 文档数据库   对象不会单独存在 作为文档的嵌入元素之九华
+Spring data  mongodb注解
+@id注解  为id
+@document注解用在类上  标明映射到Mongodb中
+@Field注解表明为元数据
 @EnableMongoRepositories注解启动MongoDB的Repositories功能
-

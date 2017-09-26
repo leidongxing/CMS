@@ -138,17 +138,12 @@
            <artifactId>spring-security-config</artifactId>
            <version>${spring.security.version}</version>
         </dependency>
-        <!-- spring data -->
-        <dependency>
-           <groupId>org.springframework.data</groupId>
-           <artifactId>spring-data-commons</artifactId>
-           <version>1.13.7.RELEASE</version>
-        </dependency>
+        <!--Spring data  -->
         <dependency>
            <groupId>org.springframework.data</groupId>
            <artifactId>spring-data-mongodb</artifactId>
            <version>1.10.7.RELEASE</version>
-        </dependency>      
+        </dependency>
 		<!-- redis客户端:Jedis -->
 		<dependency>
 			<groupId>redis.clients</groupId>
@@ -158,11 +153,6 @@
 		<dependency>
 			<groupId>com.dyuproject.protostuff</groupId>
 			<artifactId>protostuff-core</artifactId>
-			<version>1.0.8</version>
-		</dependency>
-		<dependency>
-			<groupId>com.dyuproject.protostuff</groupId>
-			<artifactId>protostuff-runtime</artifactId>
 			<version>1.0.8</version>
 		</dependency>
 		<!--单元测试-->
