@@ -166,3 +166,7 @@ HTTP Basic Authentication   HTTP Basic认证
 
 数据访问对象（data access object）DAO  以持久化技术无关的方式来访问
 模块方法模式：模块方法将过程中与特定实现相关的部分委托给接口，而这个接口的不同实现定义了过程中的具体行为
+
+
+@EnableMongoRepositories注解启动MongoDB的Repositories功能
+
