@@ -2,30 +2,26 @@ package chapter5.config;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.ActiveProfiles;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
 @PropertySource("classpath:jdbc.properties")
 @Configuration
-@ActiveProfiles({"development","production"})
-public class DruidDataSourceConfig {
+public class DruidDataSourceConfig {	
     @Bean 
     public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() { 
         return new PropertySourcesPlaceholderConfigurer(); 
     } 
     
-    @Profile("development")
+    @Primary
     @Bean(name="datasourceDev")
     public DataSource dataSourceDev(
     		@Value("${spring.datasource.druid.development.url}")String dbUrl,
@@ -41,7 +37,6 @@ public class DruidDataSourceConfig {
     	return datasource;
     }
     
-    @Profile("production")
     @Bean(name="datasourcePro")
     public DataSource dataSourceProduction(
     		@Value("${spring.datasource.druid.production.url}")String dbUrl,
@@ -57,13 +52,8 @@ public class DruidDataSourceConfig {
     	return datasource;
     }
     
-	
-	@Autowired
-	@Qualifier("datasourceDev")
-	private DataSource dataSource;
-	
 	@Bean
-    public JdbcOperations jdbcTemplate(){
+    public JdbcOperations jdbcTemplate(DataSource dataSource){
     	return new JdbcTemplate(dataSource);
     }
 }
