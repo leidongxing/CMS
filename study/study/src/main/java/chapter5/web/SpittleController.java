@@ -6,9 +6,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,7 +40,7 @@ public class SpittleController {
     		 Model model){
     	 Spittle spittle = spittleRepository.findOne(spittleId);
     	 if(spittle==null){
-    		 throw new SpittleNotFoundException();
+    		 throw new SpittleNotFoundException(spittleId);
     	 }
     	 model.addAttribute(spittle);
     	 return "spittle";
@@ -64,5 +65,17 @@ public class SpittleController {
      public String saveSpittle(Spittle spittle,Model model){
 			 spittleRepository.save(spittle);
 			 return "redirect:/spittles";
+     }
+     
+     @RequestMapping(value="/{id}",method=GET)
+     public ResponseEntity<?> spittleById(@PathVariable long id){
+    	 Spittle spittle = spittleRepository.findOne(id);
+//    	 HttpStatus status = spittle !=null? HttpStatus.OK : HttpStatus.NOT_FOUND;
+    	 if(spittle == null) {
+    		 Error error = new Error(4,"Spittle["+id+"] not found");
+    		 return new ResponseEntity<Error>(error,HttpStatus.NOT_FOUND);
+    		 
+    	 }
+    	 return new ResponseEntity<Spittle>(spittle,HttpStatus.OK);
      }
 }
