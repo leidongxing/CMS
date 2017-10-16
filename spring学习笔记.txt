@@ -182,3 +182,17 @@ Spring data  mongodb注解
 @document注解用在类上  标明映射到Mongodb中
 @Field注解表明为元数据
 @EnableMongoRepositories注解启动MongoDB的Repositories功能
+
+
+SOAP  关注行为和处理     使用大量的XML命名空间
+RPC     面向服务的  关注于行为和动作
+REST   关注要处理的数据    面向资源的  强调描述应用程序的事物和名词
+REST  将资源的状态以最适合客户端或服务器的形式从服务器端转移到客户端（或者反过来）
+资源（数据）没有变化   变化的只是表述方式
+
+
+异步消息模型  
+队列 queue  点对点模型      队列中的每一条消息只能被一个接收者取走
+主题 topic 发布/订阅模型    主题消息可以发送给多个主题订阅者
+AMQP 高级消息队列协议 Advance Message Queuing Protocol   应用层开放标准 面向消息的中间件设计 不受客户端/中间件/编程语言的限制
+
